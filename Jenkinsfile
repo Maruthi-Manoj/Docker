@@ -15,5 +15,5 @@ pipeline {
           sh 'docker push bhargava1/devops:hellowhale'
         }
       }
-    }
    }
+}
