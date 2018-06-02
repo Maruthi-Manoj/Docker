@@ -5,7 +5,6 @@ RUN apt-get update && \
  apt-get -y install curl wget && \
  apt-get -y install traceroute netcat dnsutils
 
-
 COPY wrapper.sh /
 
 COPY html /usr/share/nginx/html
