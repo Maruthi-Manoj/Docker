@@ -15,6 +15,12 @@ pipeline {
           sh 'docker push bhargava1/hellowhale:latest'
         }
       }
-   }
+    }
+    stage('Kubernetes Deploy') {
+      agent any
+      steps {
+        sh 'kubectl create -f manifest/hellowhale-deployment.yaml .'
+      }
+    }
  }
 }
