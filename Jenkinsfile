@@ -19,7 +19,7 @@ pipeline {
     stage('Kubernetes Deploy') {
       agent any
       steps {
-        sh 'kubectl create -f manifest/hellowhale-deployment.yaml .'
+        sh 'kubectl create -f manifest/hellowhale-deployment.yaml'
       }
     }
  }
