@@ -20,7 +20,6 @@ pipeline {
       agent any
       steps {
         sh 'kubectl version'
-      
       }
     }
   }
