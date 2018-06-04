@@ -19,7 +19,7 @@ pipeline {
     stage('Kubernetes Deploy') {
       agent any
       steps {
-        sh '/var/lib/jenkins/google-cloud-sdk/bin/kubectl version'
+        sh '/var/lib/jenkins/google-cloud-sdk/bin/kubectl get pods'
       }
     }
   }
