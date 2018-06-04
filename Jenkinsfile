@@ -19,9 +19,8 @@ pipeline {
     stage('Kubernetes Deploy') {
       agent any
       steps {
-        sh 'whoami'
-        //sh 'kubectl version'
-        
+        sh 'kubectl version'
+        sh 'kubectl get pods'
       }
     }
   }
