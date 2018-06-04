@@ -19,6 +19,7 @@ pipeline {
     stage('Kubernetes Deploy') {
       agent any
       steps {
+        sh 'cd ~'
         sh 'kubectl get pods'
         
       }
