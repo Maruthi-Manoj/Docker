@@ -7,7 +7,7 @@ pipeline {
         sh 'docker build -t manojnaladala/hellowhale:latest .'
       }
     }
-    stage('Docker Push') {
+   /* stage('Docker Push') {
       agent any
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
@@ -15,7 +15,7 @@ pipeline {
           sh 'docker push manojnaladala/hellowhale:latest'
         }
       }
-    }
+    }*/
    /* stage('Kubernetes Deploy') {
       agent any
       steps {
