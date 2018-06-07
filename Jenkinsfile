@@ -6,15 +6,15 @@ pipeline {
       steps {
         sh 'whoami'
         sh 'pwd'
-        sh 'docker build -t manojnaladala/hellowhale:latest .'
+        sh 'docker build -t manojnaladala/devops:latest .'
       }
     }
     stage('Docker Push') {
       agent any
       steps {
-        withCredentials([usernamePassword(credentialsId: 'Docker', passwordVariable: 'DockerPassword', usernameVariable: 'DockerHUser')]) {
+        withCredentials([usernamePassword(credentialsId: 'Docker', passwordVariable: 'DockerPassword', usernameVariable: 'DockerUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push manojnaladala/hellowhale:latest'
+          sh 'docker push manojnaladala/devops:latest'
         }
       }
     }
