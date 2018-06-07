@@ -4,6 +4,8 @@ pipeline {
      stage('Docker Build') {
       agent any
       steps {
+        sh 'whoami'
+        sh 'pwd'
         sh 'docker build -t manojnaladala/hellowhale:latest .'
       }
     }
