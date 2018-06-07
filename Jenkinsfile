@@ -4,7 +4,7 @@ pipeline {
      stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t bhargava1/hellowhale:latest .'
+        sh 'docker build -t manojnaladala/hellowhale:latest .'
       }
     }
     stage('Docker Push') {
@@ -12,16 +12,16 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push bhargava1/hellowhale:latest'
+          sh 'docker push manojnaladala/hellowhale:latest'
         }
       }
     }
-    stage('Kubernetes Deploy') {
+   /* stage('Kubernetes Deploy') {
       agent any
       steps {
         sh '/var/lib/jenkins/google-cloud-sdk/bin/kubectl get pods'
-       //sh 'kubectl get pods'
+        sh 'kubectl get pods'
       }
-    }
+    }*/
   }
 }
