@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hellowhale
-        image: manojnaladala/devops
+        image: manojnaladala/devops:29
         ports:
         - containerPort: 80
       imagePullSecrets:
