@@ -23,7 +23,7 @@ pipeline {
         // sh '/var/lib/jenkins/google-cloud-sdk/bin/kubectl get pods'
         //sh 'kubectl version'
         sh '~/google-cloud-sdk/bin/kubectl version'
-        sh '~/google-cloud-sdk/bin/kubectl set image deployment/hellowhale-deployment manojnaladala/devops:${BUILD_NUMBER}'
+        sh '~/google-cloud-sdk/bin/kubectl set image deployment/hellowhale-deployment devops=devops:${BUILD_NUMBER}'
        // sh '~/google-cloud-sdk/bin/kubectl apply -f manifest/hellowhale-deployment.yaml'
         
       }
