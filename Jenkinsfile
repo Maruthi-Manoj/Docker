@@ -4,9 +4,8 @@ pipeline {
      stage('Docker Build') {
       agent any
       steps {
-        sh 'whoami'
-        sh 'pwd'
         sh 'docker build -t manojnaladala/devops:latest .'
+        sh 'echo ${BUILD_NUMBER}'
       }
     }
     stage('Docker Push') {
