@@ -4,7 +4,7 @@ pipeline {
      stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t manojnaladala/devops:latest .'
+        sh 'docker build -t manojnaladala/devops:${BUILD_NUMBER} .'
         sh 'echo ${BUILD_NUMBER}'
       }
     }
@@ -13,7 +13,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'Docker', passwordVariable: 'DockerPassword', usernameVariable: 'DockerUser')]) {
           sh "docker login -u ${env.DockerUser} -p ${env.DockerPassword}"
-          sh 'docker push manojnaladala/devops:latest'
+          sh 'docker push manojnaladala/devops:${BUILD_NUMBER}'
         }
       }
     }
